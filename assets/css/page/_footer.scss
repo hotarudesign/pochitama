@@ -1,0 +1,95 @@
+$navBgColor: sienna;
+$navColor: bisque;
+$mvBg: #fff8dc;
+
+$sp: 500px;
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+.footer {
+  background: #e7e7e7;
+  text-align: center;
+  padding: 2% 0;
+  &__container {
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    @include sp {
+      flex-wrap: wrap;
+      background: $navColor;
+      color: $navBgColor;
+      margin-top: 4%;
+      padding: 2% 0;
+      line-height: 1.7em;
+    }
+    li + li {
+      margin-left: 2%;
+      @include sp {
+        margin-left: 4%;
+      }
+    }
+  }
+  &__logo-area {
+    @include sp {
+      display: flex;
+      justify-content: center;
+      width: 90%;
+      margin: 4% auto 6%;
+    }
+  }
+  &__comment {
+    width: 54%;
+    margin: 3% auto;
+    text-align: left;
+    line-height: 1.7em;
+    font-size: 14px;
+    @include sp {
+      width: 100%;
+      padding: 0 4%;
+      margin-top: 6%;
+    }
+    &-line {
+      margin: 1% 0;
+    }
+    &-item {
+      &:nth-child(2) {
+        margin-bottom: 2%;
+      }
+    }
+  }
+  &__link-space {
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4%;
+    @include sp {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 4%;
+    }
+    &-item {
+      width: 50%;
+      font-size: 14px;
+      line-height: 1.7em;
+      @include sp {
+        width: 100%;
+        padding: 0 4%;
+        margin-top: 2%;
+      }
+      &:last-child {
+        text-align: left;
+      }
+    }
+  }
+}

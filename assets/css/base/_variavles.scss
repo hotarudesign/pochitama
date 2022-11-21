@@ -1,0 +1,9 @@
+$navBgColor: sienna;
+$navColor: bisque;
+$mvBg: #fff8dc;
+$sp: 500px;
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
